@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const baseUrl = 'https://api.coinranking.com/v2';
+const baseUrl = process.env.REACT_CRYPTO_API_URL;
 
 const cryptoHeaders = {
-  'x-access-token': 'coinranking3f8f545f381653c92d905230e2b6e17c75313f5b5bc3b951',
+  'x-access-token': process.env.REACT_CRYPTO_ACCES_TOKEN,
 };
 
 const createRequest = (url) => ({ url, Headers: cryptoHeaders });

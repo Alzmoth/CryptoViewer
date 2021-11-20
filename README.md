@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Preview link : https://61989b2af47cb5000785f85b--alzmoth-crypto-viewer.netlify.app/crypto/razxDUgYGNAdQ
 
 ## Available Scripts
 
