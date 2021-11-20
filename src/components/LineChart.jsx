@@ -10,47 +10,48 @@ const LineChart = function ({ coinHistory, currentPrice, coinName }) {
 
     for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
        coinPrice.push(coinHistory.data.history[i].price);
+       // eslint-disable-next-line no-unsafe-optional-chaining
        coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp * 1000).toLocaleDateString());
     }
     const data = {
-        labels: coinTimestamp,
-        datasets: [
-          {
-            label: 'Price In USD',
-            data: coinPrice,
-            fill: false,
-            backgroundColor: '#0071bd',
-            borderColor: '#0071bd',
-          },
-        ],
-      };
-
-      const options = {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
+      labels: coinTimestamp,
+      datasets: [
+        {
+          label: 'Price In USD',
+          data: coinPrice,
+          fill: false,
+          backgroundColor: '#0071bd',
+          borderColor: '#0071bd',
         },
-      };
-
-      return (
-        <>
-          <Row className="chart-header">
-            <Title level={2} className="chart-title">{coinName} Price Chart </Title>
-            <Col className="price-container">
-              <Title level={5} className="price-change">Change: {coinHistory?.data?.change}%</Title>
-              <Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Title>
-            </Col>
-          </Row>
-          <Line data={data} options={options} />
-        </>
-      );
+      ],
     };
 
-export default LineChart;
+    const options = {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    };
+
+    return (
+      <>
+        <Row className="chart-header">
+          <Title level={2} className="chart-title">{coinName} Price Chart </Title>
+          <Col className="price-container">
+            <Title level={5} className="price-change">Change: {coinHistory?.data?.change}%</Title>
+            <Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Title>
+          </Col>
+        </Row>
+        <Line data={data} options={options} />
+      </>
+    );
+  };
+
+  export default LineChart;
 
 // sReHXVYHswxwcf417rCgJG7A3pzgsLGZ-JUeIFCB9M4S2w4ccYrCwOZMrmywdSUBI
