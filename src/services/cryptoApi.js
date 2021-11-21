@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseUrl = process.env.REACT_APP_CRYPTO_API_URL;
-console.log(baseUrl, 'aaa');
 const cryptoHeaders = {
   'x-access-token': process.env.REACT_APP_CRYPTO_ACCES_TOKEN,
 };
