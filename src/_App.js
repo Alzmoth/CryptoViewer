@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route, Link, Routes } from 'react-router-dom';
-import { Layout, Typography, Space } from 'antd';
+import React from "react";
+import { Route, Link, Routes } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
 
 import {
   Navbar,
@@ -9,8 +9,8 @@ import {
   Cryptocurrencies,
   News,
   CryptoDetails,
-} from './components';
-import './App.css';
+} from "./components";
+import "./App.css";
 
 const App = function () {
   return (
@@ -24,18 +24,14 @@ const App = function () {
             <Routes>
               <Route exact path="/" element={<Homepage />} />
               <Route exact path="/exchanges" element={<Exchanges />}>
-                {' '}
+                {" "}
               </Route>
               <Route
                 exact
                 path="/cryptocurrencies"
                 element={<Cryptocurrencies />}
               />
-              <Route
-                exact
-                path="/crypto/:coinId"
-                element={<CryptoDetails />}
-              />
+              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
               <Route exact path="/news" element={<News />} />
             </Routes>
           </div>
@@ -43,10 +39,10 @@ const App = function () {
 
         <div className="footer">
           <Typography.Title level={5}>
-            <Link style={{ color: 'white', textAlign: 'center' }} to="/">
-              {' '}
+            <Link style={{ color: "white", textAlign: "center" }} to="/">
+              {" "}
               Created by Alzmoth © 2021
-            </Link>{' '}
+            </Link>{" "}
             <br />
           </Typography.Title>
           <Space>
